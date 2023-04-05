@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+</head>
+
+
+
+<body>
+    <center>
+        <h1 style="background-color:LightGray;">Travel Makers</h1>
+    </center>
+    <h1>Everything<sub> in</sub> one <sup>place</sup></h1>
+    <h1 style="background-color:LightGray;">Travel purches Food and stay</h1>
+    <h2>Travel</h2>
+    <img src="img_girl.jpeg" alt="Go some where" width="1000" height="800">
+    <h2>Stay</h2>
+    <img src="pic_trulli.jpeg" alt="Stay" width="500" height="333">
+    <img src="img_chania.jpeg" alt="Stay peaceful" width="500" height="333">
+    <h2>Eat whatever you want</h2>
+    <img src="images.jpeg" alt="Eat healthy" width="600" height="500">
+    <h1 style="background-color:LightGray;">Live happyly</h1>
+    <video width="400" controls>
+        <source src="mov_bbb.mp4" type="video/mp4">
+        <source src="mov_bbb.ogg" type="video/ogg">
+        Your browser does not support HTML video.
+    </video>
+
+    <p>
+        Video courtesy of
+        <a href="https://www.bigbuckbunny.org/" target="_blank">Big Buck Bunny</a>.
+    </p>
+
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+        
+        td,
+        th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+    </head>
+
+    <body>
+
+        <h2>The choise is yours</h2>
+
+        <table>
+            <tr>
+                <th>Place</th>
+                <th>Hotels</th>
+                <th>Food</th>
+            </tr>
+            <tr>
+                <td>Alfreds Futterkiste</td>
+                <td>Maria Anders</td>
+                <td>Germany</td>
+            </tr>
+            <tr>
+                <td>Centro comercial Moctezuma</td>
+                <td>Francisco Chang</td>
+                <td>Mexico</td>
+            </tr>
+            <tr>
+                <td>Ernst Handel</td>
+                <td>Roland Mendel</td>
+                <td>Austria</td>
+            </tr>
+            <tr>
+                <td>Island Trading</td>
+                <td>Helen Bennett</td>
+                <td>UK</td>
+            </tr>
+            <tr>
+                <td>Laughing Bacchus Winecellars</td>
+                <td>Yoshi Tannamuri</td>
+                <td>Canada</td>
+            </tr>
+            <tr>
+                <td>Magazzini Alimentari Riuniti</td>
+                <td>Giovanni Rovelli</td>
+                <td>Italy</td>
+            </tr>
+        </table>
+
+    </body>
+
+    <body>
+
+        <h2>Login for your experience</h2>
+
+        <form action="/action_page.php">
+            <label for="fname">First name:</label><br>
+            <input type="text" id="fname" name="fname" value="Jehu"><br>
+            <label for="lname">Last name:</label><br>
+            <input type="text" id="lname" name="lname" value="Peter"><br><br>
+            <input type="submit" value="Submit">
+        </form>
+
+        <p>If you click the "Submit" button, the form-data will be sent to a page called "/action_page.php".</p>
+
+        <body>
+
+            <div style="background-color:black;color:white;padding:20px;">
+                <h2>travel makers</h2>
+                <p>We are doing this job past 10 years.So you can trust our services</p>
+                <p>If you have any issue contact ********</p>
+            </div>
+            <style>
+                #div1 {
+                    width: 350px;
+                    height: 70px;
+                    padding: 10px;
+                    border: 1px solid #aaaaaa;
+                }
+            </style>
+            <script>
+                function allowDrop(ev) {
+                    ev.preventDefault();
+                }
+
+                function drag(ev) {
+                    ev.dataTransfer.setData("text", ev.target.id);
+                }
+
+                function drop(ev) {
+                    ev.preventDefault();
+                    var data = ev.dataTransfer.getData("text");
+                    ev.target.appendChild(document.getElementById(data));
+                }
+            </script>
+            </head>
+
+            <body>
+
+                <p>Trip Makers</p>
+
+                <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                <br>
+                <img id="drag1" src="travel+logo.jpeg" draggable="true" ondragstart="drag(event)" width="200" height="200">
+
+            </body>
+
+            <p>Make your trip: <output id="result"></output></p>
+            <button onclick="startWorker()">Yes</button>
+            <button onclick="stopWorker()">N0</button>
+
+            <p><strong>Note:</strong>Safe</p>
+
+            <script>
+                var w;
+
+                function startWorker() {
+                    if (typeof(Worker) !== "undefined") {
+                        if (typeof(w) == "undefined") {
+                            w = new Worker("demo_workers.js");
+                        }
+                        w.onmessage = function(event) {
+                            document.getElementById("result").innerHTML = event.data;
+                        };
+                    } else {
+                        document.getElementById("result").innerHTML = "Here your results";
+                    }
+                }
+
+                function stopWorker() {
+                    w.terminate();
+                    w = undefined;
+                }
+            </script>
+
+        </body>
+
+        <body>
+
+            <h1>Getting server updates</h1>
+            <div id="result"></div>
+
+            <script>
+                if (typeof(EventSource) !== "undefined") {
+                    var source = new EventSource("demo_sse.php");
+                    source.onmessage = function(event) {
+                        document.getElementById("result").innerHTML += event.data + "<br>";
+                    };
+                } else {
+                    document.getElementById("result").innerHTML = "Sorry, your browser does not support server-sent events...";
+                }
+            </script>
+            <meta charset="UTF-8">
+            </head>
+
+            <body>
+
+                <h1>Do what makes you happy</h1>
+
+                <p style="font-size:100px">&#128516;</p>
+                >
+
+            </body>
+
+</html>
