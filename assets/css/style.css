@@ -1,0 +1,38 @@
+.myh1tag {
+    text-decoration: none;
+    font-size: 40px;
+    color: #aa3322;
+}
+
+.redcolortext {
+    color: #aa3322;
+}
+
+.greentext {
+    color: green;
+}
+
+.myborder {
+    border: 10px solid #42af9f;
+}
+
+.txtright {
+    text-align: right;
+}
+
+.mybtn {
+    border-radius: 10px;
+    padding: 50px 50px 50px 50px;
+}
+
+.mydata tr td {
+    padding: 10px;
+}
+
+.mydata tr td .mybtn {
+    background-color: #aa3322;
+}
+
+h1 {
+    font-size: 100px;
+}
